@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>דשבורד שנתי | אגף גנים ונוף | עיריית ירושלים</title>
+
+<meta property="og:title" content="דשבורד שנתי | אגף גנים ונוף">
+<meta property="og:description" content="לוח זמנים שנתי של אירועים, חגים ומשימות שוטפות באגף גנים ונוף, עיריית ירושלים">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta name="theme-color" content="#2e7d32">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌷%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #f0f5e6;
+    --bg: #f7fae8;
+    --surface: #ffffff;
+    --surface-2: #fafdf2;
+
+    --leaf: #4caf50;
+    --leaf-bright: #66bb6a;
+    --leaf-light: #8bc34a;
+    --leaf-soft: #aed581;
+    --forest: #2e7d32;
+    --forest-deep: #1b5e20;
+
+    --rose: #ec407a;
+    --rose-bright: #f06292;
+    --rose-soft: #f8bbd0;
+    --coral: #ff7043;
+    --peach: #ffab91;
+    --sun: #ffc107;
+    --sun-bright: #ffd54f;
+    --lavender: #ab47bc;
+    --lavender-bright: #ce93d8;
+    --sky: #29b6f6;
+
+    --text: #1b5e20;
+    --text-bright: #2e7d32;
+    --muted: #689f38;
+    --faded: #9ccc65;
+
+    --line: #c8e6c9;
+    --line-soft: #e8f5e9;
+
+    --space-tzafon: #29b6f6;
+    --space-alonim: #66bb6a;
+    --space-mizrah: #ff7043;
+    --space-maarav: #ab47bc;
+    --space-merkaz: #ec407a;
+    --space-oranim: #ffc107;
+    --space-darom: #26a69a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Heebo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+    background-image:
+      radial-gradient(ellipse at 15% 0%, rgba(139, 195, 74, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 30%, rgba(236, 64, 122, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(255, 193, 7, 0.10) 0%, transparent 60%),
+      radial-gradient(ellipse at 0% 80%, rgba(171, 71, 188, 0.08) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 32px 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .header {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(to left, transparent, var(--leaf-bright) 20%, var(--rose) 50%, var(--sun) 80%, transparent);
+  }
+  .header-text .eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--leaf);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .header-text h1 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--forest-deep);
+    line-height: 1.0;
+    letter-spacing: -1px;
+  }
+  .header-text h1 .accent {
+    background: linear-gradient(135deg, var(--leaf-bright) 0%, var(--rose) 50%, var(--sun) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .header-text .director {
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .header-text .director::before { content: '🌿'; font-size: 14px; }
+  .header-text .director strong {
+    color: var(--rose);
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .header-meta {
+    text-align: left;
+    direction: ltr;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .header-meta .date {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--rose);
+    letter-spacing: 2px;
+  }
+  .header-meta .org {
+    font-weight: 600;
+    color: var(--forest);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.04);
+  }
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(139, 195, 74, 0.08), transparent 60%);
+    pointer-events: none;
+  }
+  .stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(46, 125, 50, 0.12);
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 4px; height: 100%;
+    background: var(--leaf-bright);
+  }
+  .stat-card.highlight::before { background: var(--rose); }
+  .stat-card.gold::before { background: var(--sun); }
+  .stat-card.sage::before { background: var(--lavender); }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .stat-value {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-value.terra { color: var(--rose); }
+  .stat-value.gold-text {
+    background: linear-gradient(135deg, var(--sun), var(--coral));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-sub {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .section { margin-bottom: 64px; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+  }
+  .section-number {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--rose);
+    letter-spacing: 2px;
+  }
+  .section-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--forest-deep);
+  }
+  .section-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-right: auto;
+    letter-spacing: 1px;
+  }
+
+  /* ============ TIMELINE - גרסה ענקית ============ */
+  .timeline {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(46, 125, 50, 0.08);
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(139, 195, 74, 0.06), transparent 70%);
+    pointer-events: none;
+  }
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 6px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  .month-col {
+    text-align: center;
+    padding: 14px 4px;
+    background: var(--leaf-soft);
+    color: var(--forest-deep);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  .month-col.current {
+    background: linear-gradient(135deg, var(--rose) 0%, var(--coral) 50%, var(--sun) 100%);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(236, 64, 122, 0.5);
+    position: relative;
+    z-index: 3;
+  }
+  .month-col.current::after {
+    content: '◆ עכשיו';
+    display: block;
+    font-size: 9px;
+    margin-top: 4px;
+    opacity: 0.95;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+  }
+  .month-col .num {
+    display: block;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-top: 3px;
+  }
+
+  .timeline-canvas { position: relative; z-index: 2; }
+  .timeline-bg {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 6px;
+    position: absolute;
+    inset: 0;
+  }
+  .bg-col {
+    background: rgba(232, 245, 233, 0.4);
+    border: 1px dashed var(--line);
+    border-radius: 6px;
+  }
+  .bg-col.current {
+    background: rgba(236, 64, 122, 0.08);
+    border: 2px solid rgba(236, 64, 122, 0.4);
+  }
+
+  .timeline-events {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  /* כרטיס אירוע גדול - מציג הכל */
+  .event-bar {
+    position: absolute;
+    background: var(--leaf-bright);
+    color: white;
+    padding: 12px 8px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.25;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    height: 150px;
+  }
+  .event-bar:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    z-index: 10;
+  }
+  .event-bar:active {
+    transform: translateY(0) scale(0.98);
+  }
+  .event-bar.terra {
+    background: linear-gradient(135deg, var(--rose), var(--coral));
+    box-shadow: 0 4px 12px rgba(236, 64, 122, 0.3);
+  }
+  .event-bar.olive {
+    background: linear-gradient(135deg, var(--leaf), var(--leaf-light));
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  }
+  .event-bar.gold {
+    background: linear-gradient(135deg, var(--sun), var(--coral));
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+  }
+  .event-bar.lavender {
+    background: linear-gradient(135deg, var(--lavender), var(--lavender-bright));
+    box-shadow: 0 4px 12px rgba(171, 71, 188, 0.3);
+  }
+  .event-bar .icon {
+    font-size: 30px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    line-height: 1;
+  }
+  .event-bar .title {
+    font-family: 'Heebo', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    width: 100%;
+    padding: 0 4px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .legend {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px dashed var(--line);
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 4px; }
+  .legend-dot.terra { background: linear-gradient(135deg, var(--rose), var(--coral)); }
+  .legend-dot.gold { background: linear-gradient(135deg, var(--sun), var(--coral)); }
+  .legend-dot.olive { background: linear-gradient(135deg, var(--leaf), var(--leaf-light)); }
+
+  /* ============ MODAL ============ */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 30, 15, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.25s ease;
+  }
+  .modal-overlay.active {
+    display: flex;
+  }
+  .modal {
+    background: var(--surface);
+    border-radius: 16px;
+    max-width: 720px;
+    width: 100%;
+    max-height: 85vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.3s ease;
+  }
+  .modal-header {
+    background: var(--modal-color);
+    color: white;
+    padding: 32px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .modal-header::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+    pointer-events: none;
+  }
+  .modal-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+  }
+  .modal-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+  .modal-meta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+  }
+  .modal-meta span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 5;
+    line-height: 1;
+  }
+  .modal-close:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(90deg);
+  }
+
+  .modal-body {
+    padding: 28px 36px 32px;
+    overflow-y: auto;
+    flex: 1;
+  }
+  .modal-section-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .modal-section-title::before {
+    content: '✓';
+    background: var(--leaf-bright);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .task-item {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-right: 4px solid var(--modal-color);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+    align-items: start;
+    transition: all 0.2s ease;
+  }
+  .task-item:hover {
+    background: white;
+    transform: translateX(-3px);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.08);
+  }
+  .task-num {
+    width: 26px;
+    height: 26px;
+    background: var(--modal-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .task-text {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .modal-empty {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .modal-empty .emoji {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* ============ NEXT UP ============ */
+  .next-up {
+    background: linear-gradient(135deg, var(--leaf-bright) 0%, var(--leaf) 50%, var(--forest) 100%);
+    color: white;
+    padding: 40px 44px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 36px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(46, 125, 50, 0.25);
+  }
+  .next-up::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255, 213, 79, 0.30) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .next-up::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(236, 64, 122, 0.20) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .next-up-icon {
+    font-size: 76px; line-height: 1;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.25));
+    position: relative; z-index: 2;
+  }
+  .next-up-content { position: relative; z-index: 2; }
+  .next-up-content .label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--sun-bright);
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .next-up-content h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 6px;
+    color: white;
+  }
+  .next-up-content .when {
+    font-size: 14px;
+    color: var(--rose-soft);
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+  .countdown {
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    padding-right: 36px;
+    position: relative;
+    z-index: 2;
+  }
+  .countdown .num {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 76px;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--sun-bright), white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .countdown .unit {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+
+  /* ============ SPACES ============ */
+  .spaces-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .space-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.04);
+  }
+  .space-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(46, 125, 50, 0.12);
+  }
+  .space-header {
+    background: linear-gradient(135deg, var(--space-color), color-mix(in srgb, var(--space-color) 80%, white));
+    color: white;
+    padding: 22px 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .space-header::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .space-name {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+  }
+  .space-manager {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+  }
+  .space-manager-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .space-manager-name::before { content: '👤 '; margin-left: 4px; }
+  .space-manager-phone {
+    font-size: 13px;
+    color: white;
+    direction: ltr;
+    text-align: right;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.20);
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .space-manager-phone:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.05);
+  }
+  .areas-list { padding: 16px 20px; }
+  .areas-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding-right: 4px;
+  }
+  .area-item {
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+  }
+  .area-item:hover { background: var(--surface-2); }
+  .area-num {
+    width: 26px; height: 26px;
+    background: var(--space-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .area-info { overflow: hidden; }
+  .area-manager-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    line-height: 1.2;
+  }
+  .area-zones {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .area-phone {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--rose);
+    direction: ltr;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    background: white;
+  }
+  .area-phone:hover {
+    background: var(--rose);
+    color: white;
+    border-color: var(--rose);
+  }
+
+  .footer {
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+    margin-top: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+  }
+  .footer .brand {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--forest);
+    letter-spacing: 1px;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 6px 20px rgba(236, 64, 122, 0.5); }
+    50% { box-shadow: 0 8px 28px rgba(236, 64, 122, 0.7); }
+  }
+  .stat-card { animation: fadeInUp 0.6s ease both; }
+  .stat-card:nth-child(1) { animation-delay: 0.1s; }
+  .stat-card:nth-child(2) { animation-delay: 0.2s; }
+  .stat-card:nth-child(3) { animation-delay: 0.3s; }
+  .stat-card:nth-child(4) { animation-delay: 0.4s; }
+  .event-bar { animation: fadeInUp 0.7s ease both; }
+  .month-col.current { animation: pulse 3s ease-in-out infinite; }
+  .space-card { animation: fadeInUp 0.6s ease both; }
+
+  @media (max-width: 1100px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .spaces-grid { grid-template-columns: 1fr; }
+    .event-bar { height: 90px; }
+    .event-bar .title { font-size: 14px; }
+  }
+  @media (max-width: 700px) {
+    .container { padding: 20px; }
+    .header { grid-template-columns: 1fr; }
+    .header-text h1 { font-size: 36px; }
+    .stats { grid-template-columns: 1fr; }
+    .next-up { grid-template-columns: 1fr; text-align: center; padding: 28px; }
+    .countdown { border-right: none; border-top: 1px solid rgba(255, 255, 255, 0.2); padding: 24px 0 0; }
+    .area-item { grid-template-columns: 24px 1fr; gap: 8px; }
+    .area-phone { grid-column: 2; justify-self: start; margin-top: 4px; }
+    .month-col { font-size: 10px; padding: 8px 2px; }
+    .month-col.current::after { font-size: 8px; }
+    .event-bar { height: 80px; padding: 10px; }
+    .event-bar .title { font-size: 12px; }
+    .event-bar .icon { font-size: 20px; }
+    .modal { max-height: 95vh; }
+    .modal-header { padding: 24px 24px; }
+    .modal-title { font-size: 24px; }
+    .modal-body { padding: 20px 24px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <div class="header-text">
+      <div class="eyebrow">דשבורד שנתי | אירועים ומשימות</div>
+      <h1>אגף גנים <span class="accent">ונוף</span></h1>
+      <div class="director">בניהולה של <strong>עדי בן אבי</strong></div>
+    </div>
+    <div class="header-meta">
+      <div class="date" id="todayDate">30.04.2026</div>
+      <div class="org">עיריית ירושלים</div>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-label">סה״כ משימות שנתיות</div>
+      <div class="stat-value" id="totalEvents">15</div>
+      <div class="stat-sub">לאורך השנה הקלנדרית</div>
+    </div>
+    <div class="stat-card highlight">
+      <div class="stat-label">פעילות החודש</div>
+      <div class="stat-value terra" id="currentMonthEvents">1</div>
+      <div class="stat-sub" id="currentMonthLabel">אפריל 2026</div>
+    </div>
+    <div class="stat-card gold">
+      <div class="stat-label">האירוע הבא</div>
+      <div class="stat-value gold-text" id="nextEventDays" style="font-size: 30px; padding-top: 14px;">בקרוב</div>
+      <div class="stat-sub" id="nextEventLabel">—</div>
+    </div>
+    <div class="stat-card sage">
+      <div class="stat-label">מרחבים פעילים</div>
+      <div class="stat-value">7</div>
+      <div class="stat-sub">צפון · אלונים · מזרח · מערב · מרכז · אורנים · דרום</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">01 /</span>
+      <h2 class="section-title">לוח זמנים שנתי</h2>
+      <span class="section-sub">לחץ על אירוע כדי לראות את המשימות</span>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-grid" id="monthsGrid"></div>
+      <div class="timeline-canvas" id="timelineCanvas">
+        <div class="timeline-bg" id="timelineBg"></div>
+        <div class="timeline-events" id="timelineEvents"></div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item"><span class="legend-dot terra"></span>אירועים וחגים</div>
+        <div class="legend-item"><span class="legend-dot gold"></span>אירועי ספורט</div>
+        <div class="legend-item"><span class="legend-dot olive"></span>שוטף / שתילות וריסוסים</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="next-up" id="nextUpBox">
+      <div class="next-up-icon">🌷</div>
+      <div class="next-up-content">
+        <div class="label">האירוע הבא בתור</div>
+        <h3 id="nextUpName">—</h3>
+        <div class="when" id="nextUpWhen">—</div>
+      </div>
+      <div class="countdown">
+        <div class="num" id="nextUpDays">—</div>
+        <div class="unit">ימים</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="section-number">02 /</span>
+      <h2 class="section-title">מנהלי המרחבים והאזורים</h2>
+      <span class="section-sub">7 מרחבים · אחזקת גנים 2026</span>
+    </div>
+    <div class="spaces-grid" id="spacesGrid"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="brand">אגף גנים ונוף · עיריית ירושלים</div>
+    <div>עודכן 04.2026 · יקיר</div>
+  </footer>
+
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-header" id="modalHeader">
+      <button class="modal-close" id="modalClose" aria-label="סגור">×</button>
+      <div class="modal-icon" id="modalIcon">🌷</div>
+      <h2 class="modal-title" id="modalTitle">—</h2>
+      <div class="modal-meta" id="modalMeta"></div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+  // ============= EVENTS WITH TASKS =============
+  const events = [
+    {
+      name: 'ט"ו בשבט',
+      months: [1], icon: '🌳', cat: 'אירועים וחגים', color: 'olive',
+      tasks: [
+        'תיאום אירועי נטיעות עם בתי ספר וגני ילדים',
+        'הזמנת שתילי עצים מקק"ל ומשתלות',
+        'הכנת אתרי נטיעה ברחבי העיר (גנים ופארקים)',
+        'תיאום עם מחלקת חינוך לתוכניות חינוכיות',
+        'הוצאת ערכות נטיעה לקבוצות',
+        'פרסום אירועי נטיעה לציבור',
+        'תיעוד וצילום של אירועי הנטיעה',
+        'מעקב והשקיה של העצים שניטעו בשבועות הקרובים',
+      ],
+    },
+    {
+      name: 'הערכות לחג לג בעומר',
+      months: [3], icon: '🔥', cat: 'אירועים וחגים', color: 'terra',
+      tasks: [
+        'מיפוי אתרי מדורות מסורתיים בכל המרחבים',
+        'תיאום עם רשות הכבאות והצלה לפינוי שטחים',
+        'הוצאת כסחי דשא וזמירת ענפים יבשים מאזורי המדורות',
+        'הצבת שילוט הכוונה במוקדי ההתכנסות',
+        'הכנת צוותי תגבור לניקיון מיידי לאחר החג',
+        'תיאום פינוי אשפה מוגבר עם החטיבה לאיכות הסביבה',
+      ],
+    },
+    {
+      name: 'מרתון ירושלים',
+      months: [3], icon: '🏃', cat: 'אירוע ספורט', color: 'gold',
+      tasks: [
+        'תחזוקה מוגברת של גן סאקר (נקודת התחלה וסיום)',
+        'כיסוח, גיזום והשקיה מקדימה לאורך מסלול הריצה',
+        'פינוי עציצים, אדניות ומכשולים מהמסלול',
+        'תיאום עם חברת ההפקה לגבי דרישות גינון מיוחדות',
+        'הצבת צוותי שטח ביום האירוע לתחזוקה מיידית',
+        'ניקיון מיידי לאחר המרתון בכל אזורי ההתקהלות',
+      ],
+    },
+    {
+      name: 'יום העצמאות',
+      months: [4], icon: '🇮🇱', cat: 'אירועים וחגים', color: 'terra',
+      tasks: [
+        'הצבת דגלי ישראל בגנים הציבוריים המרכזיים',
+        'תליית קישוטים ושלטי ברכה ברחבי העיר',
+        'הכנת אזורי מנגלים בגן סאקר וגן הוורדים',
+        'תגבור פחי אשפה והוצאת מכלים נוספים',
+        'תיאום עם משטרת ישראל ומד"א על אזורי התקהלות',
+        'תוכנית פינוי אשפה מוגברת ל-48 שעות',
+        'בדיקת תקינות תאורה ומתקני משחק לפני האירוע',
+      ],
+    },
+    {
+      name: 'הרמת כוסית לראש השנה',
+      months: [9], icon: '🍯', cat: 'אירועים וחגים', color: 'terra',
+      tasks: [
+        'הזמנת אולם וקייטרינג לאירוע הצוות',
+        'תיאום מתנות סוף שנה לעובדי האגף',
+        'הכנת מצגת סיכום שנה והישגים',
+        'שליחת הזמנות אישיות לעובדים ולמנהלים',
+        'תיאום הסעות לעובדים מהמרחבים השונים',
+      ],
+    },
+    {
+      name: 'חלוקת עצי אשוח',
+      months: [12], icon: '🌲', cat: 'אירועים וחגים', color: 'terra',
+      tasks: [
+        'תיאום עם קק"ל לקבלת עצים לחלוקה',
+        'מיפוי אתרי חלוקה (כנסיות, קהילות נוצריות)',
+        'תיאום צוותי חלוקה ולוגיסטיקה',
+        'פרסום מועדי החלוקה לתושבים',
+        'הוצאת היתרים ואישורים מתאימים',
+        'איסוף עצים לאחר החג למחזור',
+      ],
+    },
+    {
+      name: 'סובב ירושלים',
+      months: [5], icon: '🚴', cat: 'אירוע ספורט', color: 'gold',
+      tasks: [
+        'תחזוקה מקדימה של פארק ירושלים ופארק המסילה',
+        'פינוי מכשולים מצירי האופניים',
+        'גיזום ענפים מסוכנים לאורך המסלול',
+        'הצבת שילוט הכוונה זמני',
+        'ניקיון מוגבר לפני ואחרי האירוע',
+        'תיאום עם משטרה לסגירת רחובות',
+      ],
+    },
+    {
+      name: 'שתילות חורף',
+      months: [9, 10], icon: '🌱', cat: 'שוטף', color: 'olive',
+      tasks: [
+        'הזמנת שתילים מהמשתלות (ציפורנים, אמנון, סתוונית)',
+        'הכנת ערוגות - חרישה, דישון ויישור',
+        'שתילה בכל ערוגות העונה במרחבים השונים',
+        'התקנת מערכות השקיה חדשות לפי הצורך',
+        'דישון רב-שנתיים לקראת החורף',
+        'מילוי קומפוסט וכיסוי ערוגות',
+      ],
+    },
+    {
+      name: 'ימי זיכרון - אנדרטאות',
+      months: [4], icon: '🕯️', cat: 'שוטף', color: 'olive',
+      tasks: [
+        'מיפוי כל האנדרטאות והאתרים הזיכרון בעיר',
+        'ניקיון יסודי של אנדרטאות ולוחות הקדשה',
+        'גיזום וטיפוח הצמחייה סביב האנדרטאות',
+        'החלפת זרי פרחים מצמחי עונה',
+        'תיקון תאורה ובדיקת תקינות מתקנים',
+        'תיאום עם משרד הביטחון על טקסים',
+      ],
+    },
+    {
+      name: 'יום ירושלים',
+      months: [5], icon: '🏛️', cat: 'אירועים וחגים', color: 'terra',
+      tasks: [
+        'תליית דגלי ירושלים ברחבי העיר',
+        'תחזוקה מוגברת של גנים מרכזיים בעיר העתיקה',
+        'הכנת אזורי התקהלות לטקס הריקודגלים',
+        'תיאום עם הגיחון ומשטרה לאזורי הצעדה',
+        'ניקיון רציף לאורך מסלולי המצעדים',
+        'גיזום ופינוי לפני ההתקהלות הגדולה',
+      ],
+    },
+    {
+      name: 'שתילות קיץ',
+      months: [3, 4, 5], icon: '🌻', cat: 'שוטף', color: 'olive',
+      tasks: [
+        'הזמנת שתילי קיץ עמידי חום (פטוניה, חמנייה, ורבנה)',
+        'הכנת ערוגות והוצאת שתילי חורף',
+        'דישון אורגני ושיפור קרקע לפני שתילה',
+        'התאמת מערכות השקיה לתגבור קיצי',
+        'שתילה בכל המרחבים לפי תוכנית עיצוב',
+        'מעקב והשקיה מוגברת בשבועיים הראשונים',
+      ],
+    },
+    {
+      name: 'ריסוסי עשבייה',
+      months: [3, 4], icon: '🌿', cat: 'שוטף', color: 'olive',
+      tasks: [
+        'הזמנת חומרי הדברה מאושרים על ידי משרד הבריאות',
+        'תיאום ריסוסים עם מנהלי המרחבים',
+        'פרסום הודעה לתושבים על ריסוסים מתוכננים',
+        'ביצוע ריסוס בשטחים פתוחים ומסלולי הליכה',
+        'מעקב ובדיקה אחר יעילות הטיפול',
+        'ביצוע ריסוס משלים במוקדים בעייתיים',
+      ],
+    },
+    {
+      name: 'שתילות עונתיים מרחב מרכז (יהודי)',
+      months: [8, 9], icon: '🌷', cat: 'אירועים וחגים', color: 'terra',
+      tasks: [
+        'תכנון מפורט של ערוגות לקראת החגים',
+        'הזמנת שתילי בולבוסים (נרקיסים, רקפות, סייפנים)',
+        'הכנת ערוגות בגנים המרכזיים',
+        'שתילה תמטית לקראת ראש השנה וסוכות',
+        'הצבת שלטי ברכה צמחיים',
+        'תחזוקה ומעקב בתקופת החגים',
+      ],
+    },
+    {
+      name: 'ימי גיבוש (יוני)',
+      months: [6], icon: '🤝', cat: 'אירועים וחגים', color: 'terra',
+      tasks: [
+        'בחירת אתר בילוי (כנרת, צפון, דרום)',
+        'הזמנת אוטובוסים והסעות',
+        'תיאום פעילות גיבוש עם מדריכים',
+        'תיאום ארוחות וכיבוד',
+        'הוצאת לוז יום מפורט לעובדים',
+        'תיאום ביטוח ובטיחות',
+      ],
+    },
+    {
+      name: 'ימי גיבוש (אוקטובר)',
+      months: [10], icon: '🤝', cat: 'אירועים וחגים', color: 'terra',
+      tasks: [
+        'בחירת אתר סתווי (יערות, חולות, אגמים)',
+        'הזמנת הסעות והגעה',
+        'תיאום פעילויות גיבוש מותאמות לעונה',
+        'הזמנת ארוחה חמה וכיבוד',
+        'הכנת מתנות סוף שנה לעובדים',
+        'תיאום צילום קבוצתי וזיכרונות',
+      ],
+    },
+    {
+      name: 'חג הסיגד',
+      months: [11], icon: '⛰️', cat: 'אירועים וחגים', color: 'terra',
+      tasks: [
+        'תיאום עם הקהילה האתיופית בירושלים',
+        'הכנת אתר הטקס בארמון הנציב / טיילת',
+        'גיזום ניקיון וסידור צמחייה במקום',
+        'תיאום עם משטרה והעירייה למענה ביום הטקס',
+        'הצבת צוותי תגבור ביום הטקס',
+        'ניקיון מיידי לאחר הטקס',
+      ],
+    },
+    {
+      name: 'ביקורי מנהיגים - תקציב',
+      months: [12], icon: '📋', cat: 'אירועים וחגים', color: 'terra',
+      tasks: [
+        'הכנת מצגת סיכום פעילות שנתית',
+        'הכנת תוכנית עבודה לשנה הבאה',
+        'הכנת בקשות תקציב מפורטות',
+        'תיאום סיורי שטח עם הנהלת העירייה',
+        'הצגת הישגים ופרויקטים בולטים',
+        'הכנת חומרי תיעוד ויזואליים',
+      ],
+    },
+  ];
+
+  const months = ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
+
+  const spaces = [
+    { name: 'מרחב צפון', manager: 'גול באסם', phone: '052-8416368', color: 'var(--space-tzafon)', areas: [
+      { num: '1', name: 'לחמי משה', phone: '052-5414210', zones: 'נווה יעקב, עטרות, פסגת זאב צפון ומרכז' },
+      { num: '2', name: 'אביאל כהן / רפי לוי', phone: '054-5231790', zones: 'פסגת זאב' },
+      { num: '26', name: 'איאהב זעטרי', phone: '052-2406995', zones: 'בית חנינא, שועפת' },
+    ]},
+    { name: 'מרחב אלונים', manager: 'אשרף נצראללה', phone: '052-2868531', color: 'var(--space-alonim)', areas: [
+      { num: '3', name: 'ישראל יוסף', phone: '054-7870224', zones: 'רמת שלמה, כביש 9, מנהרת הארזים' },
+      { num: '4', name: 'שמעון בודקוב', phone: '052-2388782', zones: 'רמות' },
+      { num: '6', name: 'חיים דתנר', phone: '050-5553833', zones: 'רוממה, סנהדריה, שנלר, הר חוצבים' },
+    ]},
+    { name: 'מרחב מזרח', manager: 'רשק גסן', phone: '054-5565012', color: 'var(--space-mizrah)', areas: [
+      { num: '7', name: 'אורון אגאי', phone: '050-2289889', zones: 'סנהדריה המורחבת, רמת אשכול, הר הצופים' },
+      { num: '8', name: 'נאסר אבו שחדה', phone: '052-2384989', zones: 'שער שכם, הר הזיתים, שייח׳ ג׳ראח' },
+      { num: '25', name: 'אברהים סומרין', phone: '052-6399707', zones: 'פארק ירושלים, עמק הארזים' },
+    ]},
+    { name: 'מרחב מערב', manager: 'תומר אברהם', phone: '050-5880404', color: 'var(--space-maarav)', areas: [
+      { num: '5', name: 'גיא מנחם', phone: '050-2627817', zones: 'קרית משה, גבעת שאול, הר נוף' },
+      { num: '10', name: 'קובי נמר', phone: '050-9250600', zones: 'בית הכרם, גבעת מרדכי, יפה נוף' },
+      { num: '16', name: 'אורן מיכאלי', phone: '050-6203687', zones: 'בית וגן, מלחה, רמת דניה, הולילנד' },
+      { num: '17', name: 'ניר כהן', phone: '050-7987123', zones: 'קריית יובל, עין כרם, הר הרצל' },
+      { num: '18', name: 'יניב רביבו', phone: '050-6800810', zones: 'קריית מנחם, גבעת משואה, עיר גנים' },
+    ]},
+    { name: 'מרחב מרכז', manager: 'דן מזרחי', phone: '050-6761154', color: 'var(--space-merkaz)', areas: [
+      { num: '9', name: 'רחמים דאדאשי', phone: '052-7175797', zones: 'שמואל הנביא, גאולה, מאה שערים, מקור ברוך' },
+      { num: '11', name: 'דן מזרחי', phone: '050-6761154', zones: 'גן סאקר, קריית הממשלה, נווה שאנן' },
+      { num: '12', name: 'איציק מזרחי', phone: '054-9758940', zones: 'מרכז העיר, רחביה, נחלאות, ממילא' },
+      { num: '13', name: 'יוסרי רשק', phone: '052-8712874', zones: 'עיר עתיקה, אבו טור, ימין משה' },
+      { num: '23', name: 'דן מזרחי', phone: '050-6761154', zones: 'גן הוורדים' },
+    ]},
+    { name: 'מרחב אורנים', manager: 'ניסים אשורי', phone: '054-5378840', color: 'var(--space-oranim)', areas: [
+      { num: '14', name: 'אחמד בדר', phone: '052-8744035', zones: 'בקעה, מקור חיים, מושבה גרמנית, גן הפעמון' },
+      { num: '14ב', name: 'גיא נידם', phone: '050-8588844', zones: 'פארק המסילה, פארק גוננים' },
+      { num: '15', name: 'בן ברזני', phone: '052-5557178', zones: 'קטמונים, גבעת הורדים, מושבה יוונית' },
+      { num: '20', name: 'משה אבינועם', phone: '050-5531005', zones: 'פת, ארנונה, א.ת תלפיות' },
+      { num: '22', name: 'סלימה מוחמד', phone: '052-2768129', zones: 'עמק הצבאים' },
+    ]},
+    { name: 'מרחב דרום', manager: 'אדם ברדריאן', phone: '050-9054551', color: 'var(--space-darom)', areas: [
+      { num: '19', name: 'משה בורשטיין', phone: '050-3034335', zones: 'גילה' },
+      { num: '21', name: 'צחי חנוכה', phone: '050-5252150', zones: 'תלפיות מזרח, ארמון הנציב' },
+      { num: '24', name: 'אורן כהן', phone: '050-9395555', zones: 'חומת שמואל' },
+    ]},
+  ];
+
+  // ============= TODAY =============
+  const today = new Date();
+  const currentMonth = today.getMonth() + 1;
+  const currentYear = today.getFullYear();
+
+  document.getElementById('todayDate').textContent = today.toLocaleDateString('en-GB').replace(/\//g, '.');
+  document.getElementById('currentMonthLabel').textContent = `${months[currentMonth-1]} ${currentYear}`;
+  document.getElementById('totalEvents').textContent = events.length;
+
+  const eventsThisMonth = events.filter(e => e.months.includes(currentMonth)).length;
+  document.getElementById('currentMonthEvents').textContent = eventsThisMonth;
+
+  function getNextEvent() {
+    const upcoming = events
+      .map(e => ({...e, startMonth: Math.min(...e.months), dateApprox: new Date(currentYear, Math.min(...e.months) - 1, 15)}))
+      .filter(e => e.dateApprox >= today)
+      .sort((a, b) => a.dateApprox - b.dateApprox);
+    if (upcoming.length > 0) return upcoming[0];
+    const firstNextYear = [...events]
+      .map(e => ({...e, startMonth: Math.min(...e.months)}))
+      .sort((a,b) => a.startMonth - b.startMonth)[0];
+    return { ...firstNextYear, dateApprox: new Date(currentYear + 1, firstNextYear.startMonth - 1, 15) };
+  }
+
+  const nextEvent = getNextEvent();
+  const daysUntil = Math.max(0, Math.ceil((nextEvent.dateApprox - today) / (1000 * 60 * 60 * 24)));
+
+  document.getElementById('nextEventDays').textContent = daysUntil + ' ימים';
+  document.getElementById('nextEventLabel').textContent = nextEvent.name;
+  document.getElementById('nextUpName').textContent = nextEvent.name;
+  document.getElementById('nextUpWhen').textContent = `${months[Math.min(...nextEvent.months) - 1]} ${nextEvent.dateApprox.getFullYear()}`;
+  document.getElementById('nextUpDays').textContent = daysUntil;
+  document.querySelector('.next-up-icon').textContent = nextEvent.icon;
+
+  // ============= MONTHS GRID =============
+  const monthsGrid = document.getElementById('monthsGrid');
+  months.forEach((m, idx) => {
+    const div = document.createElement('div');
+    div.className = 'month-col' + (idx + 1 === currentMonth ? ' current' : '');
+    div.innerHTML = `${m}<span class="num">${String(idx+1).padStart(2,'0')}</span>`;
+    monthsGrid.appendChild(div);
+  });
+
+  // ============= TIMELINE BG =============
+  const timelineBg = document.getElementById('timelineBg');
+  for (let i = 1; i <= 12; i++) {
+    const col = document.createElement('div');
+    col.className = 'bg-col' + (i === currentMonth ? ' current' : '');
+    timelineBg.appendChild(col);
+  }
+
+  // ============= LAYOUT EVENTS =============
+  const eventsWithRange = events.map((e, idx) => ({
+    ...e,
+    originalIndex: idx,
+    startMonth: Math.min(...e.months),
+    endMonth: Math.max(...e.months),
+  })).sort((a, b) => a.startMonth - b.startMonth || a.name.localeCompare(b.name, 'he'));
+
+  const rows = [];
+  eventsWithRange.forEach(e => {
+    let placed = false;
+    for (let i = 0; i < rows.length; i++) {
+      const lastEvent = rows[i][rows[i].length - 1];
+      if (lastEvent.endMonth < e.startMonth) {
+        rows[i].push(e);
+        e.row = i;
+        placed = true;
+        break;
+      }
+    }
+    if (!placed) {
+      rows.push([e]);
+      e.row = rows.length - 1;
+    }
+  });
+
+  const numRows = rows.length;
+  const cardHeight = 150;
+  const gap = 12;
+  const totalHeight = numRows * (cardHeight + gap) + 20;
+
+  document.getElementById('timelineCanvas').style.height = totalHeight + 'px';
+
+  const timelineEvents = document.getElementById('timelineEvents');
+  const monthWidthPercent = 100 / 12;
+
+  // צבעי המודאל לפי קטגוריה
+  const colorMap = {
+    terra: 'linear-gradient(135deg, #ec407a, #ff7043)',
+    gold: 'linear-gradient(135deg, #ffc107, #ff7043)',
+    olive: 'linear-gradient(135deg, #4caf50, #8bc34a)',
+    lavender: 'linear-gradient(135deg, #ab47bc, #ce93d8)',
+  };
+
+  eventsWithRange.forEach((e, idx) => {
+    const bar = document.createElement('div');
+    bar.className = 'event-bar ' + (e.color || '');
+    bar.style.animationDelay = (0.4 + idx * 0.05) + 's';
+    const rightPercent = (e.startMonth - 1) * monthWidthPercent;
+    const widthPercent = (e.endMonth - e.startMonth + 1) * monthWidthPercent;
+    bar.style.right = `calc(${rightPercent}% + 6px)`;
+    bar.style.width = `calc(${widthPercent}% - 12px)`;
+    bar.style.top = (10 + e.row * (cardHeight + gap)) + 'px';
+
+    const monthLabel = e.startMonth === e.endMonth
+      ? months[e.startMonth - 1]
+      : `${months[e.startMonth - 1]} - ${months[e.endMonth - 1]}`;
+
+    bar.innerHTML = `
+      <span class="icon">${e.icon}</span>
+      <div class="title">${e.name}</div>
+    `;
+
+    bar.addEventListener('click', () => openModal(e));
+    timelineEvents.appendChild(bar);
+  });
+
+  // ============= MODAL =============
+  const modalOverlay = document.getElementById('modalOverlay');
+  const modalHeader = document.getElementById('modalHeader');
+  const modalIcon = document.getElementById('modalIcon');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMeta = document.getElementById('modalMeta');
+  const modalBody = document.getElementById('modalBody');
+  const modalClose = document.getElementById('modalClose');
+
+  function openModal(event) {
+    const monthLabel = event.startMonth === event.endMonth
+      ? months[event.startMonth - 1]
+      : `${months[event.startMonth - 1]} - ${months[event.endMonth - 1]}`;
+
+    modalIcon.textContent = event.icon;
+    modalTitle.textContent = event.name;
+    modalMeta.innerHTML = `
+      <span>📅 ${monthLabel}</span>
+      <span>🏷️ ${event.cat}</span>
+      <span>✓ ${event.tasks.length} משימות</span>
+    `;
+
+    // צבע ההדר לפי הקטגוריה
+    modalHeader.style.background = colorMap[event.color] || colorMap.olive;
+    document.querySelector('.modal').style.setProperty('--modal-color',
+      event.color === 'terra' ? '#ec407a' :
+      event.color === 'gold' ? '#ffc107' :
+      event.color === 'lavender' ? '#ab47bc' :
+      '#66bb6a'
+    );
+
+    if (event.tasks && event.tasks.length > 0) {
+      modalBody.innerHTML = `
+        <div class="modal-section-title">משימות ופעולות נדרשות</div>
+        <div class="task-list">
+          ${event.tasks.map((task, i) => `
+            <div class="task-item">
+              <div class="task-num">${i + 1}</div>
+              <div class="task-text">${task}</div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    } else {
+      modalBody.innerHTML = `
+        <div class="modal-empty">
+          <span class="emoji">📝</span>
+          טרם הוגדרו משימות לאירוע זה
+        </div>
+      `;
+    }
+
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // ============= SPACES =============
+  const spacesGrid = document.getElementById('spacesGrid');
+  spaces.forEach((s, idx) => {
+    const card = document.createElement('div');
+    card.className = 'space-card';
+    card.style.setProperty('--space-color', s.color);
+    card.style.animationDelay = (0.1 * idx) + 's';
+
+    const areasHtml = s.areas.map(a => `
+      <div class="area-item">
+        <div class="area-num">${a.num}</div>
+        <div class="area-info">
+          <div class="area-manager-name">${a.name}</div>
+          <div class="area-zones">${a.zones}</div>
+        </div>
+        <a href="tel:${a.phone.replace(/-/g,'')}" class="area-phone">${a.phone}</a>
+      </div>
+    `).join('');
+
+    card.innerHTML = `
+      <div class="space-header">
+        <div class="space-name">${s.name}</div>
+        <div class="space-manager">
+          <div class="space-manager-name">${s.manager}</div>
+          <a href="tel:${s.phone.replace(/-/g,'')}" class="space-manager-phone">${s.phone}</a>
+        </div>
+      </div>
+      <div class="areas-list">
+        <div class="areas-label">${s.areas.length} מנהלי אזור</div>
+        ${areasHtml}
+      </div>
+    `;
+    spacesGrid.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
