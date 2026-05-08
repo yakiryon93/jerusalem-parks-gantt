@@ -1243,6 +1243,41 @@
         'תוכנית פינוי אשפה מוגברת ל-48 שעות',
         'בדיקת תקינות תאורה ומתקני משחק לפני האירוע',
       ],
+      details: {
+        intro: 'דגשים מתוך סיכום ישיבת מנהלי מרחבים — יום ראשון, 19 באפריל 2026.',
+        briefing: {
+          title: 'דגשים לקראת יום העצמאות',
+          subtitle: 'מתוך ישיבת מנהלי המרחבים, 19.4.2026',
+          sections: [
+            {
+              title: 'ערב יום העצמאות (21.4)',
+              items: [
+                'הנחיות הפיקוח העירוני דינמיות ועלולות להשתנות בכל רגע. כרגע ההנחיה: הכל מתקיים כרגיל, ואנחנו נערכים לאירוע המרכזי בגן העצמאות ובשכונות.',
+                'לוודא נציגות עובדים בגנים ובפארקים הרלוונטיים.',
+                'כל העובדים נדרשים להיות זמינים.',
+                'לוודא סגירת מים בפארקים הרלוונטיים.',
+              ],
+            },
+            {
+              title: 'יום העצמאות עצמו — רביעי בבוקר (22.4)',
+              items: [
+                'להיערך לנוכחות בגנים ובפארקים שמגיעים אליהם קהלים גדולים.',
+                'בפארקים שמותר להדליק בהם מנגל — לדאוג להצבת מיכלים לזריקת גחלים.',
+              ],
+            },
+            {
+              title: 'אכיפה ופיקוח',
+              items: [
+                'תיפתח קבוצת וואטסאפ משותפת איתנו עם הפיקוח לצורך אכיפה בפארקים.',
+                'אכיפה הן בפארקים באופן כללי והן בפארקים שאסור להדליק בהם מנגל.',
+                'הנוכחות בפארקים קריטית לשמירה עליהם.',
+                'יש לגייס גם את עובדי הקבלן.',
+                'לעדכן מיידית על כל מקרה חריג.',
+              ],
+            },
+          ],
+        },
+      },
     },
     {
       name: 'הרמת כוסית לראש השנה',
@@ -1302,6 +1337,25 @@
         'תיקון תאורה ובדיקת תקינות מתקנים',
         'תיאום עם משרד הביטחון על טקסים',
       ],
+      details: {
+        intro: 'דגשים מתוך סיכום ישיבת מנהלי מרחבים — יום ראשון, 19 באפריל 2026.',
+        briefing: {
+          title: 'דגשים לקראת יום הזיכרון',
+          subtitle: 'מתוך ישיבת מנהלי המרחבים, 19.4.2026',
+          sections: [
+            {
+              title: 'אנדרטאות — סיום במהירות',
+              items: [
+                'יומיים לסיים את כל האנדרטאות.',
+                'חייב לישר קו היום ומחר בכל האנדרטאות, גם אם זה אומר להוציא עובדים מהשוטף.',
+                'לעשות את כל המאמצים כדי שכל האנדרטאות יהיו מוכנות מבעוד מועד ליום הנופלים.',
+                'היום מתקיימת חזרה גנרלית בהר הרצל.',
+                'הציצים סביב הר הרצל חייבים להיות מתוקתקים כבר מהיום (באחריות תומר אברהם).',
+              ],
+            },
+          ],
+        },
+      },
     },
     {
       name: 'יום ירושלים',
@@ -1638,25 +1692,33 @@
           `;
         });
       }
-      if (d.lessons) {
-        html += `
-          <div class="lessons-block">
-            <div class="lessons-header">
-              <div class="lessons-title">${d.lessons.title}</div>
-              ${d.lessons.subtitle ? `<div class="lessons-subtitle">${d.lessons.subtitle}</div>` : ''}
-            </div>
-            ${d.lessons.sections.map(sec => `
-              <div class="lessons-section">
-                <div class="lessons-section-title">${sec.title}</div>
-                <div class="lessons-list">
-                  ${sec.items.map(it => `
-                    <div class="lessons-item"><b>${it.label}</b> — ${it.text}</div>
-                  `).join('')}
-                </div>
-              </div>
-            `).join('')}
+      const renderInfoBlock = (block) => `
+        <div class="lessons-block">
+          <div class="lessons-header">
+            <div class="lessons-title">${block.title}</div>
+            ${block.subtitle ? `<div class="lessons-subtitle">${block.subtitle}</div>` : ''}
           </div>
-        `;
+          ${block.sections.map(sec => `
+            <div class="lessons-section">
+              <div class="lessons-section-title">${sec.title}</div>
+              <div class="lessons-list">
+                ${sec.items.map(it => {
+                  if (typeof it === 'string') {
+                    return `<div class="lessons-item">${it}</div>`;
+                  }
+                  return `<div class="lessons-item"><b>${it.label}</b> — ${it.text}</div>`;
+                }).join('')}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      if (d.briefing) {
+        html += renderInfoBlock(d.briefing);
+      }
+      if (d.lessons) {
+        html += renderInfoBlock(d.lessons);
       }
     } else if (hasTasks) {
       html += `
