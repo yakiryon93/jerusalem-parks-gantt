@@ -601,6 +601,105 @@
     margin-bottom: 10px;
   }
 
+  /* ===== Detailed event view (timeline + lessons) ===== */
+  .detail-intro {
+    background: var(--surface-2);
+    border-right: 4px solid var(--modal-color);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    font-size: 14.5px;
+    color: var(--text);
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  .detail-phase {
+    margin-bottom: 22px;
+  }
+  .detail-phase-title {
+    background: var(--modal-color);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px 8px 0 0;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .detail-rows {
+    border: 1px solid var(--line);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    background: white;
+  }
+  .detail-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 14px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line-soft);
+    align-items: start;
+  }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-row:nth-child(even) { background: var(--surface-2); }
+  .detail-label {
+    color: var(--forest);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .detail-text {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .lessons-block {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 2px dashed var(--line);
+  }
+  .lessons-header {
+    margin-bottom: 16px;
+  }
+  .lessons-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .lessons-subtitle {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 2px;
+  }
+  .lessons-section { margin-bottom: 16px; }
+  .lessons-section-title {
+    color: var(--forest);
+    font-weight: 700;
+    font-size: 14.5px;
+    margin-bottom: 8px;
+    padding-right: 10px;
+    border-right: 3px solid var(--modal-color);
+  }
+  .lessons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .lessons-item {
+    background: var(--surface-2);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--text);
+  }
+  .lessons-item b { color: var(--forest); font-weight: 700; }
+
+  @media (max-width: 720px) {
+    .detail-row { grid-template-columns: 1fr; gap: 4px; }
+    .detail-label { font-size: 13.5px; }
+  }
+
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -1035,6 +1134,90 @@
         'הכנת צוותי תגבור לניקיון מיידי לאחר החג',
         'תיאום פינוי אשפה מוגבר עם החטיבה לאיכות הסביבה',
       ],
+      details: {
+        intro: 'מסמך זה מיועד לפתיחה לקראת ל"ג בעומר ומרכז את כלל המשימות הנדרשות לפי ציר זמן.',
+        timeline: [
+          {
+            title: 'חודש ומעלה לפני ל"ג בעומר — תיאומים ותשתיות',
+            items: [
+              { label: 'טרקטורים', text: 'לתאם עם הרכב התחלת עבודה בשטחי המדורות' },
+              { label: 'עשבייה', text: 'לוודא טיפול בעשבייה בכל הגנים והשטחים' },
+              { label: 'שילוט', text: 'להכין ולוודא מלאי שלטי "מותר להדליק" / "אסור להדליק" במחסן' },
+              { label: 'שתילות', text: 'לא לקדם שתילות באזורי ההילולות — לבחון שתילים חזקים לאזורים חשופים' },
+              { label: 'תכנון כ"א', text: 'להכין תכנית כוח אדם 1-2 משמרות לכל מרחב' },
+              { label: 'קבלן', text: 'העסקת קבלן: 18:00 עד 02:00. לוודא זמינות טנדר עם מיכל מים' },
+            ],
+          },
+          {
+            title: 'שבועיים לפני — שטח וציוד',
+            items: [
+              { label: 'סמוכות עצים', text: 'להוציא סמוכות מכל העצים לפתוח בתוך השכונות — מונע גניבה לצורך מדורות' },
+              { label: 'חרמשים', text: 'לשבץ צוות חרמשים ייעודי (לפחות 3 לכל מרחב) להכנת שטחי המדורות' },
+              { label: 'מטפים (אם אפשרי)', text: 'לוודא שיש 2 מטפים לכל מרחב — ייעודים למשמרות הלילה' },
+              { label: 'שילוט בשטח', text: 'לפרוס שלטי איסור/היתר הדלקה בשטחים הרלוונטיים' },
+            ],
+          },
+          {
+            title: 'שבוע לפני — תיאומים סופיים',
+            items: [
+              { label: 'רשימות לרפרנט', text: 'רשימת לוז: רשימת עובדים לערב ל"ג בעומר + רשימת גנים/שטחים/שעות אסטרטגיות' },
+              { label: 'וואטסאפ משותף', text: 'לפתוח קבוצת וואטסאפ משותפת עם הפיקוח העירוני' },
+              { label: 'הנחיות לעובדים', text: 'להנחות עובדים: לאתר התארגנות מוקדמת מדי — ללא עימות, דיווח לפיקוח בלבד' },
+              { label: 'ניידות', text: 'לשבץ נהג קטנוע ייעודי לכל מרחב לסיור בשתי המשמרות' },
+            ],
+          },
+          {
+            title: 'יום האירוע — תפעול שוטף',
+            items: [
+              { label: 'פיקוח עירוני', text: 'יקיר ביצע שיתוף בפיקוח העירוני — זמינות מלאה. העובדים מסייעים באזורים לשמירת הגנים והמתקנים הציבוריים' },
+              { label: 'משמרות', text: '2 משמרות פעילות בכל מרחב. וידוא נוכחות ותפקוד עובדים בשטח' },
+              { label: 'אוכל למשמרות', text: 'חלוקת אוכל — עובד פנים מהאגף אחראי. לוודא זמן ומיקום נגיש לשתי המשמרות' },
+              { label: 'דיווח שוטף', text: 'עדכונים שוטפים בקבוצת הוואטסאפ המשותפת לביצוע הפיקוח' },
+            ],
+          },
+        ],
+        lessons: {
+          title: 'הפקת לקחים — ל"ג בעומר תשפ"ה',
+          subtitle: 'ריכוז ממצאים ממנהלי המרחבים',
+          sections: [
+            {
+              title: 'הכנה מוקדמת',
+              items: [
+                { label: 'סמוכות עצים', text: 'נגנבות לצורך מדורות — לשקול הוצאה מהעצים שבוע-שבועיים לפני החג.' },
+                { label: 'היערכות', text: 'זמן ההיערכות הכולל קצר מדי וייצור עומס — מוצע להאריך את תקופת ההכנה.' },
+                { label: 'צוות חרמשים', text: 'אין צוות ייעודי לשטחי המדורות — מוצע לפחות 3 עובדים לכל מרחב.' },
+                { label: 'טרקטורים', text: 'מגיעים רק ימים ספורים לפני החג — מוצע להקדים את הרכבים.' },
+              ],
+            },
+            {
+              title: 'ביצוע בשטח',
+              items: [
+                { label: 'איתור מדורות', text: 'קשה לאתר מדורות בשלב ההכנה — מוצע נהג קטנוע ייעודי לכל מרחב בשתי המשמרות.' },
+                { label: 'מענה לשריפות', text: 'רכב הכבאות לא נמצא אפקטיבי — מוצע לחלק 2 מטפים לכל מרחב למשמרת הלילה.' },
+              ],
+            },
+            {
+              title: 'לוגיסטיקה ואוכל',
+              items: [
+                { label: 'חלוקת אוכל', text: 'משמרת הבוקר לא קיבלה אוכל, זמן החלוקה למשמרת ב\' מוקדם מדי, המיקום רחוק בשעת פקק.' },
+                { label: 'עצמאות האגף', text: 'תלות בגורמים חיצוניים גרמה לכשלים — מוצע שעובד פנים מהאגף ינהל את החלוקות.' },
+              ],
+            },
+            {
+              title: 'שילוט',
+              items: [
+                { label: 'אספקת שלטים', text: 'שלטי איסור הבערת אש לא היו במחסן — לשמור מלאי ייעודי לאזור זה. השלטים נשברים ומרוסקים באופן תדיר, לחשוב באופן כללי על מקומות שמרכזים שילוט.' },
+              ],
+            },
+            {
+              title: 'שתילה',
+              items: [
+                { label: 'אזורי הילולות', text: 'צמחייה נפגעת סמוך למקומות הילולות — מוצע לבחון שתילים חזקים יותר לאזורים אלו.' },
+              ],
+            },
+          ],
+        },
+      },
     },
     {
       name: 'מרתון ירושלים',
@@ -1427,8 +1610,56 @@
       '#66bb6a'
     );
 
-    if (event.tasks && event.tasks.length > 0) {
-      modalBody.innerHTML = `
+    const hasTasks = event.tasks && event.tasks.length > 0;
+    const hasDetails = !!event.details;
+
+    let html = '';
+
+    if (hasDetails) {
+      const d = event.details;
+      if (d.intro) {
+        html += `<div class="detail-intro">${d.intro}</div>`;
+      }
+      if (Array.isArray(d.timeline) && d.timeline.length) {
+        html += `<div class="modal-section-title">ציר זמן ומשימות</div>`;
+        d.timeline.forEach(phase => {
+          html += `
+            <div class="detail-phase">
+              <div class="detail-phase-title">${phase.title}</div>
+              <div class="detail-rows">
+                ${phase.items.map(it => `
+                  <div class="detail-row">
+                    <div class="detail-label">${it.label}</div>
+                    <div class="detail-text">${it.text}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        });
+      }
+      if (d.lessons) {
+        html += `
+          <div class="lessons-block">
+            <div class="lessons-header">
+              <div class="lessons-title">${d.lessons.title}</div>
+              ${d.lessons.subtitle ? `<div class="lessons-subtitle">${d.lessons.subtitle}</div>` : ''}
+            </div>
+            ${d.lessons.sections.map(sec => `
+              <div class="lessons-section">
+                <div class="lessons-section-title">${sec.title}</div>
+                <div class="lessons-list">
+                  ${sec.items.map(it => `
+                    <div class="lessons-item"><b>${it.label}</b> — ${it.text}</div>
+                  `).join('')}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+    } else if (hasTasks) {
+      html += `
         <div class="modal-section-title">משימות ופעולות נדרשות</div>
         <div class="task-list">
           ${event.tasks.map((task, i) => `
@@ -1440,13 +1671,15 @@
         </div>
       `;
     } else {
-      modalBody.innerHTML = `
+      html = `
         <div class="modal-empty">
           <span class="emoji">📝</span>
           טרם הוגדרו משימות לאירוע זה
         </div>
       `;
     }
+
+    modalBody.innerHTML = html;
 
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
